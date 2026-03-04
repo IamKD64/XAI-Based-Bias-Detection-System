@@ -60,7 +60,7 @@ The system allows dynamic selection and evaluation of multiple trained models.
 ---
 
 ## System Architecture
-                                  +----------------------+
+                       +----------------------+
                        |        Dataset       |
                        |   (Adult Income)     |
                        +----------+-----------+
