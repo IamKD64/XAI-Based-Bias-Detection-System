@@ -60,28 +60,59 @@ The system allows dynamic selection and evaluation of multiple trained models.
 ---
 
 ## System Architecture
-            Dataset
-              │
-              │
-      Data Preprocessing
-              │
-              │
-       Model Training
-              │
-              │
-    Model Serialization
-         (Pickle File)
-              │
-              │
-    Streamlit Web Application
-              │
-              │
-┌──────────────┼───────────────┐
-│ │ │
-Model Analysis Prediction Explainability
-│ │ │
-│ │ │
-Bias Evaluation Confidence SHAP Visualization
+                                  +----------------------+
+                       |        Dataset       |
+                       |   (Adult Income)     |
+                       +----------+-----------+
+                                  |
+                                  v
+                       +----------------------+
+                       |   Data Preprocessing |
+                       | Cleaning, Encoding,  |
+                       | Feature Engineering  |
+                       +----------+-----------+
+                                  |
+                                  v
+                       +----------------------+
+                       |    Model Training    |
+                       |  Multiple ML Models  |
+                       +----------+-----------+
+                                  |
+                                  v
+                       +----------------------+
+                       |   Model Serialization|
+                       |      (Pickle)        |
+                       +----------+-----------+
+                                  |
+                                  v
+                       +----------------------+
+                       |  Streamlit Web App   |
+                       |  Interactive UI      |
+                       +----------+-----------+
+                                  |
+                                  v
+                +-----------------+-------------------+
+                |                                     |
+                v                                     v
+     +-----------------------+             +-----------------------+
+     |    Model Analysis     |             |     User Prediction   |
+     | Performance Metrics   |             |   Input Features      |
+     +----------+------------+             +-----------+-----------+
+                |                                      |
+                v                                      v
+     +-----------------------+             +-----------------------+
+     |    Bias Evaluation    |             |    Confidence Score   |
+     | Fairness vs Accuracy  |             |   Prediction Output   |
+     +----------+------------+             +-----------+-----------+
+                |                                      |
+                +----------------+---------------------+
+                                 |
+                                 v
+                     +---------------------------+
+                     |   Explainable AI (SHAP)   |
+                     | Feature Contribution      |
+                     | Waterfall Visualization   |
+                     +---------------------------+
 
 ---
 
